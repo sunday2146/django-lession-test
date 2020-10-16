@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'five' %}" method="POST">
+    {% csrf_token %}
+    {% for item in form %}
+    <div>
+        <label for="{{item.id_for_label}}">{{item.label}}</label>
+        {{item}}
+    </div>
+    <p>{{item.errors.as_text}}</p>
+    {% endfor %}
+    <span>{{form.non_field_errors}}</span>
+    <input type="submit" value="提交" />
+</form>
+</body>
+</html>

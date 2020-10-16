@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>${self.title()}</title>
+    <link rel="stylesheet" href="">
+    ${self.css()}
+</head>
+<body>
+    ${self.content()}
+    ${self.js()}
+</body>
+</html>
+<%def name="content()">
+    ${self.main()}
+</%def>
+<%def name="main()"></%def>
+<%def name="title()"></%def>
+<%def name="js()"></%def>
+<%def name="css()"></%def>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    {% for message in messages %}
+    <li style="color:{{message.message_typ.color}}">
+        {{message.content}}
+        {{message.created_time}}
+        <a href="{{message.id}}"></a>
+    </li>
+    {% endfor %}
+    <!--
+        定义两个视图 一个是 修改消息，通过id过滤，修改 content
+                   第二个 删除消息，通过id过滤查到，就删除
+     -->
+</ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load myfilter %}
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'index.css' %}" />
+{% endblock %}
+{% block title %}
+test
+{% endblock %}
+{% block content %}
+
+<h1> hello {{name}} </h1>
+
+<ul>
+{% for item in array %}
+<li>{{item}}</li>
+{% endfor %}
+</ul>
+
+<br />
+
+<label>add:</label>{{count|add:10}}<br />
+<label>date:</label>{{time|date:"Y-m-d H:i:s"}}<br />
+<label>cut:</label>{{cut_str|cut:"-"}}<br />
+<label>capfirst:</label>{{first_big|capfirst}}<br />
+<label>default:</label>{{result|default:"空"}}<br />
+<label>deafult_if_none:</label>{{result|default_if_none:"none才是空"}}<br />
+<label>dictsort:</label>{{dic_list|dictsort:'age'}}<br />
+<label>dictsortreversed:</label>{{dic_list|dictsortreversed:'age'}}<br />
+<label>first:</label>{{dic_list|first}}<br />
+<label>last:</label>{{dic_list|last}}</br />
+<label>floatformat:</label>{{float_num|floatformat:4}}<br />
+<label>join:</label>{{array|join:"-"}}<br />
+<label>length:</label>{{dic_list|length}}<br />
+<label>divisibleby:</label>{{count|divisibleby:3}}<br />
+<label>length_is:</label>{{dic_list|length_is:2}}<br />
+<label>safe:</label>{{html_str|safe}}</br />
+<label>random:</label>{{dic_list|random}}<br />
+<label>slice:</label>{{html_str|slice:":10"}}<br />
+<label>slugify:</label>{{html_str|slugify}}<br />
+<label>upper:</label>{{html_str|upper}}<br />
+<label>urlize:</label>{{a_str|urlize}}<br />
+<label>wordcount:</label>{{first_big|wordcount}}<br />
+<label>timeuntil:</label>{{feature|timeuntil}}<br />
+<label>custom:</label>{{count|test:10}}
+{% endblock %}

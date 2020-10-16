@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        form {
+            width: 25%;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 2%;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+        }
+        input {
+            display: block;
+            width: 100%;
+        }
+        #submit {
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    {% if not user.is_authenticated %}
+    <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+        <input type="text" name="username" placeholder="用户名" required />
+        <input type="password" name="password" placeholder="密码" required />
+        <input id="submit" type="submit" value="登录"/>
+        {{error}}
+    </form>
+    {% else %}
+    <a href="{% url 'logout' %}">退出登录</a>
+    {% endif %}
+</body>
+</html>

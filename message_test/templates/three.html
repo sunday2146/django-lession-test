@@ -1,0 +1,17 @@
+{% load custom %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title1</title>
+</head>
+<body>
+{% if error %}
+<h3>error: {{error}}</h3>
+{% else %}
+<label style="color:{{message_type.color}}">{{message_type.label}}</label>
+<span style="color:{{message_type.color}}">{{message|deep_check_message|add_message_year:"1,2,3,4"}}</span>
+{% endif %}
+
+</body>
+</html>

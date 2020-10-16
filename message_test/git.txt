@@ -1,0 +1,13 @@
+github 存储代码的一个管理平台
+
+git 代码管理仓库工具
+
+git fetch   检查线上是否有最新的代码,下啦到本地临时仓库
+git merge   将检查到的最新代码（某个分支下）进行合并
+git pull
+
+git add xxxx xxx 把代码提交到本地临时仓库
+git commit -m"log message"  是把代码提交到本地仓库
+git push origin 分支名称
+
+git checkout develop

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style>
+        #edit-area {
+            width: 25%;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        input {
+            display: block;
+            width: 100%;
+        }
+        #submit, #reset{
+            width: 40px;
+            display: inline-block;
+        }
+
+        #reset {
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="edit-area" action="{% url 'regist' %}" method="POST">{% csrf_token %}
+        <input name="username" type="text" placeholder="用户名" />
+        <input name="password" type="password" placeholder="密码" />
+        <input name="check_password" type="password" placeholder="确认密码" />
+        <input id="submit" type="submit" value="提交" />
+        <input id="reset" type="reset" value="重置" />
+        {{error}}
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regist</title>
+</head>
+<body>
+  <form action="{% url 'regist' %}" method="POST">
+      {% csrf_token %}
+      {% for item in form %}
+        <div>
+            <label for="{{item.id_for_label}}">{{item.label}}</label>
+            {{item}}
+            <p>{{item.errors.as_text}}</p>
+        </div>
+      {% endfor %}
+      <span>{{ form.non_field_errors }}</span><br />
+      <!--<label>用户名</label><input type="text" name="username" placeholder="用户名" /><br />-->
+      <!--<label>密码</label><input type="password" name="password" placeholder="密码" /><br />-->
+      <input type="submit" value="提交" />
+  </form>
+</body>
+</html>

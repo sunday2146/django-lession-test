@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-area {
+            width: 50%;
+            margin: 10% auto;
+        }
+    </style>
+</head>
+<body>
+<form class="form-area" action="{% url 'login' %}" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="username">username</label>
+    <input type="text" class="form-control" name="username" placeholder="username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+  <input type="hidden"  username="next_return" value="{{next}}"/>
+  <button type="submit" class="btn btn-default">登录</button>
+  <span>{{error}}</span>
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<%inherit file="base.html" />
+
+<%def name="js()">
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
+</%def>
+<%def name="main()">
+<%include file="extend.html" args="local_content='你好 mako'" />
+<h1>hello mako</h1>
+
+</%def>
+
+
+<%def name="title()">test</%def>
+<%def name="css()">
+<link rel="stylesheet" href="/static/test.css" />
+</%def>    
